@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<title>Portfolio Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+html {
+      scroll-behavior: smooth;
+    }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 50%; /* Adjust this value to move the image lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="image/Passport-Picture.jpg" style="width:45%;" class="w3-round"><br><br>
+    <h4><b>Welcome</b></h4>
+    <p class="w3-text-grey"></p>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="image/Passport-Picture.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>Azizul Portfolio</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+     </a><span class="w3-margin-right">Filter:</span>
+      <a href="index.html"> <button class="w3-button w3-black">Home</button></a>
+      <a href="codingskills.html"><button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Coding Skills</button></a>
+      <a href="gallery.html"><button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Gallery</button></a>
+    </div>
+    </div>
+  </header>
+  
+
+  <!-- Image Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  
+ <!-- First Photo Grid-->
+ <div class="w3-row-padding">
+  <h4>Gallery</h4>
+
+  <div class="w3-third w3-container w3-margin-bottom">
+    <img src="image/b3dd6bd5be74cff985183c4969ccf2f8.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+
+
+  <div class="w3-third w3-container w3-margin-bottom">
+    <img src="image/Networking.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+
+
+  <div class="w3-third w3-container">
+    <img src="image/Screenshot - 2_15_2024 , 9_20_16 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+      <p style="text-align: center;"><b>Java - MS SQL</b></p>
+    </div>
+  </div>
+</div>
+ 
+
+<!-- Second Photo Grid-->
+<div class="w3-row-padding">
+  <div class="w3-third w3-container w3-margin-bottom">
+    <img src="image/Screenshot - 2_15_2024 , 9_24_30 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+
+
+  <div class="w3-third w3-container w3-margin-bottom">
+    <img src="image/Screenshot - 2_6_2025 , 8_52_58 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+
+
+  <div class="w3-third w3-container">
+    <img src="image/Screenshot - 2_6_2025 , 8_53_20 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+</div>
+ 
+
+
+ <!-- 3 Photo Grid-->
+<div class="w3-row-padding">
+  <div class="w3-third w3-container w3-margin-bottom">
+    <img src="image/Screenshot - 2_6_2025 , 8_54_06 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+
+
+  <div class="w3-third w3-container w3-margin-bottom">
+    <img src="image/Screenshot - 2_6_2025 , 9_08_31 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+
+
+  <div class="w3-third w3-container">
+    <img src="image/Screenshot - 2_6_2025 , 9_16_55 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+    <div class="w3-container w3-white">
+    </div>
+  </div>
+</div>
+
+
+
+
+ <!-- 3 Photo Grid-->
+ <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="image/Screenshot - 2_6_2025 , 9_20_27 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  
+  
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="image/Screenshot - 2_6_2025 , 9_20_45 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  
+  
+    <div class="w3-third w3-container">
+      <img src="image/Screenshot - 2_6_2025 , 9_21_07 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+ <!-- 3 Photo Grid-->
+ <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="image/Screenshot - 2_6_2025 , 9_21_21 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  
+  
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="image/Screenshot - 2_6_2025 , 9_24_47 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  
+  
+    <div class="w3-third w3-container">
+      <img src="image/Screenshot - 2_6_2025 , 9_25_39 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- 3 Photo Grid-->
+ <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="image/Screenshot - 2_6_2025 , 9_27_51 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  
+  
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="image/Screenshot - 2_6_2025 , 9_28_33 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  
+  
+    <div class="w3-third w3-container">
+      <img src="image/Screenshot - 2_6_2025 , 9_29_05 AM.png" alt="Norway" style="width:100%" class="w3-hover-opacity" onclick="openModal(this)">
+      <div class="w3-container w3-white">
+      </div>
+    </div>
+  </div>
+
+
+
+
+ 
+<div class="w3-container w3-padding-large" style="margin-bottom:32px">
+  <h4 id="about"><b>About Me</b></h4>
+  <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+  <hr>
+  
+  <h4>Team Leader Skill</h4>
+
+
+  <!-- Progress bars / Skills -->
+  <p>Communication</p>
+  <div class="w3-grey">
+    <div class="w3-container w3-teal w3-padding w3-center" style="width:95%">95%</div>
+  </div>
+  <p>Support Others</p>
+  <div class="w3-grey">
+    <div class="w3-container w3-teal w3-padding w3-center" style="width:97%">97%</div>
+  </div>
+  <p>Problem Solving</p>
+  <div class="w3-grey">
+    <div class="w3-container w3-teal w3-padding w3-center" style="width:93%">93%</div>
+  </div>
+  <p>
+  <p>Discipline</p>
+  <div class="w3-grey">
+    <div class="w3-container w3-teal w3-padding w3-center" style="width:93%">93%</div>
+  </div>
+  <p>
+  <p>Work Spirit</p>
+  <div class="w3-grey">
+    <div class="w3-container w3-teal w3-padding w3-center" style="width:90%">90%</div>
+  </div>
+  <p>
+  <p>Talkative</p>
+  <div class="w3-grey">
+    <div class="w3-container w3-teal w3-padding w3-center" style="width:98%">98%</div>
+  </div>
+  <p>
+
+      <div style="display: flex; justify-content: center;">
+    <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom" onclick="openPDF()">
+      <i class="fa fa-download w3-margin-right"></i>Download Resume
+    </button>
+  </p>
+  <hr>
+  </div>
+  <h4>My Personal Project</h4>
+  <!-- Pricing Tables -->
+  <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+        <li class="w3-black w3-xlarge w3-padding-32">e.Commerce Store</li>
+        <li class="w3-padding-16">Coming 2025</li>
+        <li class="w3-padding-16">It is standard eCommerce which is focus on sales and dropshipping all over the district.</li>
+        <li class="w3-padding-16">browebstorebn.com</li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large w3-hover-black">Still working on it</button>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+        <li class="w3-teal w3-xlarge w3-padding-32">Search Product</li>
+        <li class="w3-padding-16">Coming 2025</li>
+        <li class="w3-padding-16">Seller can post their products while visitors can search for any product they want.</li>
+        <li class="w3-padding-16">browebsearchproductbn.com</li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large w3-hover-black">Still working on it</button>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="w3-third">
+      <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+        <li class="w3-black w3-xlarge w3-padding-32">Provide IOT Services</li>
+        <li class="w3-padding-16">Pending Project</li>
+        <li class="w3-padding-16">Provide IOT for Aquafarm or Agriculture to push the quality and export outside Brunei.</li>
+        <li class="w3-padding-16">browebiotbn.com</li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large w3-hover-black">Still working on it</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-padding-large w3-grey">
+  <h4 id="contact"><b>Contact Me</b></h4>
+  <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+    <div class="w3-third w3-dark-grey">
+      <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+      <p>bibi.aitz@gmail.com</p>
+    </div>
+    <div class="w3-third w3-teal">
+      <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+      <p>Brunei Darussalam</p>
+    </div>
+    <div class="w3-third w3-dark-grey">
+      <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+      <p>+673 8187906</p>
+    </div>
+  </div>
+  <hr class="w3-opacity">
+</div>
+
+
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Design By Professional Developer</div>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<script>
+    function openModal(img) {
+      document.getElementById("imageModal").style.display = "block";
+      document.getElementById("modalImage").src = img.src;
+    }
+    
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+    </script>
+
+<script>
+  function openPDF() {
+    const pdfUrl = 'CV-Application.pdf'; // Change this to the actual path of your PDF file
+    window.open(pdfUrl, '_blank'); // Opens the PDF in a new tab
+  }
+</script>
+
+</body>
+</html>
