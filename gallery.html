@@ -123,17 +123,10 @@
   
     <h3 class="fw-bold text-center mb-4">Project Activity</h3>
   
-    <div class="row g-3">
+    <div class="row g-3 mt-4">
   
       <!-- Image 1 -->
-      <div class="col-6 col-md-4 col-lg-3">
-        <img src="https://raw.githubusercontent.com/gravitybibi/AzizulPortfolio/Main/image/1.jpg" class="img-fluid gallery-img" onclick="openModal(this.src)">
-      </div>
-
-
-  
-     
-
+      <div class="row" id="gallery"></div>
 
     </div>
   </div>
@@ -169,5 +162,19 @@
 
   function closeModal() {
     document.getElementById("imgModal").style.display = "none";
+  }
+</script>
+
+<script>
+  let gallery = document.getElementById("gallery");
+
+  for (let i = 1; i <= 54; i++) {
+    gallery.innerHTML += `
+      <div class="col-6 col-md-4 col-lg-3 mb-4">
+        <img src="https://raw.githubusercontent.com/gravitybibi/AzizulPortfolio/Main/image/${i}.jpg"
+             class="img-fluid gallery-img"
+             onclick="openModal(this.src)">
+      </div>
+    `;
   }
 </script>
